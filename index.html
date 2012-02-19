@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <title>Introduction to the HTML5 audio tag javascript manipulation</title>
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/jquery.audiotag.js" type="text/javascript"></script>
+    <script src="js/jquery.uitablefilter.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+<!--
+        <div>
+            <a href="#" class="play buttons">play</a>
+            <a href="#" class="pause buttons">pause</a>
+            <a href="#" class="playatTime buttons">play at 35 secondes</a>
+            <a href="#" class="volumestop buttons">Volume to 0</a>
+            <a href="#" class="volumeMax buttons">Volume open</a>
+        </div>
+
+<input type="text" value="http://shoutcast.internet-radio.org.uk:10272/" id="url" size="50"/>
+<button id="load">Load</button>
+<br/>!-->
+
+<div>
+    <button class="play">Play</button>
+    <button class="pause">Pause</button>
+    <input type="range" id="volume" min="0" max="100"/>
+</div>
+<div id="mainbody">
+
+    <script type="text/javascript">
+//https://garando@bitbucket.org/garando/radiola
+        $(function() {
+            var theTable = $('table.stations-list')
+
+            theTable.find("tbody > tr").find("td:eq(1)").mousedown(function() {
+                $(this).prev().find(":checkbox").click()
+            });
+
+            $("#filter").keyup(function() {
+                $.uiTableFilter(theTable, this.value);
+            })
+
+            $('#filter-form').submit(
+                    function() {
+                        theTable.find("tbody > tr:visible > td:eq(1)").mousedown();
+                        return false;
+                    }).focus(); //Give focus to input field
+        });
+    </script>
+
+    <h2>Список радіостанцій</h2>
+
+    <form id="filter-form">Filter: <input name="filter" id="filter" value="" maxlength="30" size="30" type="text">
+    </form>
+    <br>
+    <table class="stations-list">
+
+    </table>
+    <br><br></form>
+
+
+</div>
+</body>
+</html>

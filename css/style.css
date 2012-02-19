@@ -1,0 +1,117 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+    padding: 0;
+    margin: 0;
+    background: url("../img/back.png") repeat left top;
+    font-family: Tahoma;
+    color: #42474a;
+    font-size: 14px;
+}
+
+p, h1, h3, h2, h4 {
+    margin: 0px;
+}
+
+a img {
+    border: none;
+}
+.wrapper{
+    width: 400px;
+    margin: 0 auto;
+}
+.content-wrapper{
+    width: 400px;
+    float: left;
+}
+.player{
+    width: 300px;
+    float: left;
+    margin: 20px 0px 20px 50px;
+}
+.player button{
+    width: 35px;
+    height: 35px;
+    float: left;
+    background: -moz-linear-gradient(center top , #70b7fa, #3799f5) repeat scroll 0 0 transparent;
+    background-image: -webkit-gradient(linear,left bottom,left top,from(#3799f5), to(#70b7fa));
+    border-radius: 17px;
+    border: 1px solid #448dfb;
+    box-shadow: 0px -1px 2px #465c75 inset;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.player button:active{
+    box-shadow: 0px 1px 2px #465c75 inset;
+}
+.player button span.play{
+    border-color: transparent transparent transparent #e4f0f8;
+    border-right: 0 dashed transparent;
+    border-style: dashed dashed dashed solid;
+    border-width: 7px 0 7px 7px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    position: relative;
+    width: 0;
+    margin-left: 1px;
+    margin-top: 3px;
+}
+.player button span.pause{
+    border-color: #e4f0f8;
+    border-style: solid solid solid solid;
+    border-width: 0px 3px 0px 3px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0;
+    height: 12px;
+    line-height: 0;
+    position: relative;
+    width: 3px;
+    margin-top: 3px;
+}
+.player input[type=range]{
+    margin-top: 7px;
+}
+.filter-wrapper{
+    width: 380px;
+    float: left;
+    border: 1px solid #42474a;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-top: 10px;
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x:hidden;
+}
+h2{
+    font-size: 20px;
+    color: #42474a;
+    font-weight: normal;
+    clear: left;
+    padding-left: 10px;
+}
+.filter-wrapper input[type=text]{
+    background: #ffffff;
+    border: 1px solid #7a7e80;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3) inset;
+    border-radius: 5px;
+    padding: 3px 5px;
+    width: 370px;
+}
+.stations-list{
+    width: 380px;
+}
+.stations-list th{
+    font-weight: normal;
+    text-align: left;
+    color: #000000;
+    font-size: 15px;
+    font-family: "Trebuchet MS";
+}
+.stations-list tr.row{
+    cursor: pointer;
+}
